@@ -1,0 +1,13 @@
+type DataPoint {
+    timestamp: String
+    value: Float
+}
+
+type ChartData {
+    chartId: String
+    data: [DataPoint]
+}
+
+type Query {
+    chartData: ChartData
+}
