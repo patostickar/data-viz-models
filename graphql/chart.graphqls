@@ -1,0 +1,18 @@
+type KeyValuePair {
+    key: String!
+    value: Float!
+}
+
+type ChartPoint {
+    timestamp: String!
+    values: [KeyValuePair!]!
+}
+
+type ChartData {
+    chartId: String!
+    data: [ChartPoint!]!
+}
+
+type Query {
+    getCharts: [ChartData!]!
+}
