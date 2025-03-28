@@ -1,13 +1,8 @@
 scalar Int64
 
-type KeyValuePair {
-    key: String!
-    value: Float!
-}
-
 type ChartPoint {
     timestamp: String!
-    values: [KeyValuePair!]!
+    values: [Float!]!
 }
 
 type ChartData {
