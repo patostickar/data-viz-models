@@ -15,6 +15,23 @@ type ChartDataTimestamp {
     chartData: [ChartData!]!
 }
 
+type Settings {
+    NumPlotsPerChart: Int!
+    NumPoints: Int!
+    PollInterval: Int!
+}
+
+input SettingsInput {
+    NumPlotsPerChart: Int
+    NumPoints: Int
+    PollInterval: Int
+}
+
 type Query {
     getCharts: ChartDataTimestamp
+    settings: Settings
+}
+
+type Mutation {
+    updateSettings(settings: SettingsInput!): Settings
 }
