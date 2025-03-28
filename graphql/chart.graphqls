@@ -13,6 +13,11 @@ type ChartData {
     data: [ChartPoint!]!
 }
 
+type ChartDataTimestamp {
+    timestamp: Int!
+    chartData: [ChartData!]!
+}
+
 type Query {
-    getCharts: [ChartData!]!
+    getCharts: ChartDataTimestamp
 }
