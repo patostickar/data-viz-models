@@ -18,13 +18,11 @@ type ChartDataTimestamp {
 type Settings {
     NumPlotsPerChart: Int!
     NumPoints: Int!
-    PollInterval: Int!
 }
 
 input SettingsInput {
     NumPlotsPerChart: Int
     NumPoints: Int
-    PollInterval: Int
 }
 
 type Query {
