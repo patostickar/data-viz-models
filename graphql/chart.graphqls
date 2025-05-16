@@ -10,11 +10,6 @@ type ChartData {
     data: [ChartPoint!]!
 }
 
-type ChartDataTimestamp {
-    timestamp: Int64!
-    chartData: [ChartData!]!
-}
-
 type Settings {
     NumPlotsPerChart: Int!
     NumPoints: Int!
@@ -26,7 +21,7 @@ input SettingsInput {
 }
 
 type Query {
-    getCharts: ChartDataTimestamp
+    getCharts: [ChartData!]!
     settings: Settings
 }
 
