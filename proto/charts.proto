@@ -1,0 +1,20 @@
+syntax = "proto3";
+package charts;
+
+import "google/protobuf/empty.proto";
+
+option go_package = "github.com/patostickar/go-server-data-viz/models/proto";
+
+message ChartPoint {
+  string timestamp = 1;
+  repeated float values = 2;
+}
+
+message ChartData {
+  string chartId = 1;
+  repeated ChartPoint points = 2;
+}
+
+service ChartService {
+  rpc GetChartData(google.protobuf.Empty) returns (ChartData);
+}
