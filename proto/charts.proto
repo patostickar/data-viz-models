@@ -3,11 +3,11 @@ package charts;
 
 import "google/protobuf/empty.proto";
 
-option go_package = "github.com/patostickar/go-server-data-viz/models/proto";
+option go_package = "github.com/patostickar/go-server-data-viz/models";
 
 message ChartPoint {
   string timestamp = 1;
-  repeated float values = 2;
+  repeated double values = 2;
 }
 
 message ChartData {
@@ -15,6 +15,10 @@ message ChartData {
   repeated ChartPoint points = 2;
 }
 
+message ChartDataList {
+  repeated ChartData items = 1;
+}
+
 service ChartService {
-  rpc GetChartData(google.protobuf.Empty) returns (ChartData);
+  rpc GetChartData(google.protobuf.Empty) returns (ChartDataList);
 }
